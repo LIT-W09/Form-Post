@@ -40,6 +40,17 @@ namespace WebApplication11.Models
             conn.Close();
         }
 
+        public void Delete(int id)
+        {
+            SqlConnection conn = new SqlConnection(_connectionString);
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "DELETE FROM Furniture WHERE Id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
         public List<Furniture> GetAll()
         {
             SqlConnection connection = new SqlConnection(_connectionString);
@@ -55,7 +66,7 @@ namespace WebApplication11.Models
                     Id = (int)reader["Id"],
                     Name = (string)reader["Name"],
                     Color = (string)reader["Color"],
-                    Price =(decimal)reader["Price"],
+                    Price = (decimal)reader["Price"],
                     QuantityInStock = (int)reader["QuantityInStock"]
                 });
             }

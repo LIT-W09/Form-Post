@@ -14,9 +14,23 @@ namespace WebApplication11.Controllers
             return View();
         }
 
+        public ActionResult HiddenDemo()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SubmitHidden(string hiddenValue)
+        {
+            PostDemoViewModel vm = new PostDemoViewModel
+            {
+                Name = hiddenValue
+            };
+            return View(vm);
+        }
+
         public ActionResult FormPost(string name)
         {
-
             PostDemoViewModel vm = new PostDemoViewModel
             {
                 Name = name

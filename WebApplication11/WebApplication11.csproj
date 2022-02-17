@@ -115,6 +115,8 @@
     <Content Include="Views\PostDemo\FormPost.cshtml" />
     <Content Include="Views\Furniture\ShowAdd.cshtml" />
     <Content Include="Views\Furniture\Index.cshtml" />
+    <Content Include="Views\PostDemo\HiddenDemo.cshtml" />
+    <Content Include="Views\PostDemo\SubmitHidden.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
