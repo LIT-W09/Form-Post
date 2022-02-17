@@ -1,0 +1,47 @@
+﻿@using WebApplication11.Models
+@model FurnitureViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <a href="/furniture/showadd" class="btn btn-primary btn-block">Add</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-5">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Color</th>
+                            <th>Price</th>
+                            <th>Quantity In Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Furniture furniture in Model.FurnitureItems)
+                        {
+                            <tr>
+                                <td>@furniture.Id</td>
+                                <td>@furniture.Name</td>
+                                <td>@furniture.Color</td>
+                                <td>@furniture.Price.ToString("C")</td>
+                                <td>@furniture.QuantityInStock</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
